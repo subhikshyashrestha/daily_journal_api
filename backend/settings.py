@@ -77,9 +77,10 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 import dj_database_url
 import os
 DATABASES = {
-    'default': dj_database_url.config(
-        default=f'sqlite:///{BASE_DIR / "db.sqlite3"}'
-    )
+   'default': dj_database_url.config(
+       default='postgresql://localhost/db_name',
+       conn_max_age=600
+   )
 }
 
 
